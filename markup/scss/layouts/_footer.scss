@@ -1,0 +1,40 @@
+#footer {
+	padding: rem-calc(10px 20px 0);
+	background: $black-500;
+}
+
+.footer__nav {
+	// padding: rem-calc(10px);		
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+	margin: 0;
+
+	li {
+		@include animate(opacity, 0.3s, ease-in-out);
+		list-style: none;
+
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $primary;
+
+		span {
+			display: block;
+			font-size: rem-calc(32px);
+			text-align: center;
+		}
+
+		.nav__text {
+			font: #{rem-calc(20px)}/2.5 Roboto, sans-serif; 
+		}
+	}
+}
+
+
+

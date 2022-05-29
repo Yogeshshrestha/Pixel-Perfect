@@ -1,0 +1,146 @@
+#header {
+	padding: rem-calc(42px 0 13px);
+	background: $black-500;
+	margin-bottom: rem-calc(30px);
+}
+
+.header__icon {
+	padding: rem-calc(0 20px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: $primary;
+	position: relative;
+}
+
+.menu__opener,
+.search__opener {
+	@include animate(opacity, 0.3s, ease-in-out)
+	text-decoration: none;
+	color: $primary;
+	border: none;
+	background: transparent;
+
+	&:hover {
+		opacity: 0.4;
+	}
+
+	.icon-menu,
+	.icon-search {
+		font-size: rem-calc(34px);
+	}
+}
+
+.user__nav {
+	@include animate(opacity, 0.3s, ease-in-out);
+	font-size: rem-calc(20px);
+	margin-right: rem-calc(5px);
+	color: $primary;
+	text-decoration: none;
+
+	&:hover {
+		opacity: 0.4;
+	}
+
+	.icon-user {
+		margin-right: rem-calc(3px);
+	}
+}
+
+.search__opener__form {
+	@include animate(opacity visibility transform);
+	display: flex;
+	padding-left: rem-calc(20px);
+	position: absolute;	
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(100%);
+
+	.search--active & {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+
+	.search__button {
+		@include animate(opacity background, 0.3s, ease-in-out);
+		font-size: rem-calc(20px);
+		margin-right: rem-calc(10px);
+		outline: none;
+		border: none;
+		background: transparent;
+
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+
+	label {
+		display: none;
+	}
+
+	.search__input {
+		font-size: #{rem-calc(18px)};
+		width: 100%;
+		height: auto;
+		border: none;
+		outline: none;
+		background: transparent;
+
+		@include placeholder {
+			color: $primary;
+			align-items: center;
+		}
+	}
+
+	[type='search'] {
+		color: white;
+	}
+}
+
+.side__menu {
+	@include animate(opacity visibility transform);
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	background: $black;
+	padding: rem-calc(40px 20px);
+	display: block;
+	z-index: 9;
+	overflow-y: scroll;
+	opacity: 0;
+	visibility: hidden;
+	// transform: translateX(-100%);
+
+	.nav--active & {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+
+	a {
+		line-height: 3;
+		list-style: none;
+		text-decoration: none;
+		color: $primary;
+		display: block;
+		border-bottom: 1px solid $primary;
+		z-index: 99;
+
+
+		[class^="icon-"] {
+			font-size: rem-calc(32px);
+			margin-right: 20px;
+		}
+
+		[class^="user__text"] {
+			font-size: rem-calc(20px);
+		}
+
+		.user__text__logout {
+			margin-left: 40px;
+		}
+	}
+}
